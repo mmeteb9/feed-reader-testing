@@ -6,7 +6,6 @@ In this project you are given a web-based application that reads RSS feeds. The 
   - You can download or clone this repository >= https://github.com/mmeteb9/feed-reader-testing.git
   - Find the index.html file, and open the file in a modern browser.
   - The Jasmine tests are displayed at the bottom of the index.html page.
-
 ## Why this Project?
 
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development." This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
@@ -77,4 +76,9 @@ When you're all finished, write a `README` file detailing all steps required to 
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
+# details of running the app successfully and tests on it
 
+  - there is at least single element feed in the page
+  - the tests insure that the menu show and hide when its clicked.
+  - the menu is hidden by default
+  - the title of th feed and its Url is defined and dont empty

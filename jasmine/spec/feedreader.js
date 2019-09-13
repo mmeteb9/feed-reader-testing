@@ -51,12 +51,11 @@ $(function () {
 
 
 
-    /* This suite is all about the Menu element 
+    /* This suite is all about the Menu element
      * and its showing and hiding status in our application.*/
 
     describe('The menu', function () {
-
-        /* This test ensures the menu element is hidden by default */
+     /* This test ensures the menu element is hidden by default */
 
         it('the menu is hidden by default', function () {
 
@@ -64,25 +63,25 @@ $(function () {
 
         });
 
-        /*This test ensures the menu changes 
-        visibility when the menu icon is clicked */
-
+        /*This test ensures the menu changes
+      visibility when the menu icon is clicked */
         it('Async menu changes visibility when the menu icon is clicked', function () {
             $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBeFalsy();
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBeTruthy();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
 
     });
 
 
-    /* This suite is for "Initial Entries" that appear after all feeds is loaded*/
-    describe('Initial Entries', function () {
+
+        /* This suite is for "Initial Entries" that appear after all feeds is loaded*/
+            describe('Initial Entries', function () {
 
 
-        /* This test ensures when the loadFeed
+      /* This test ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single entry element within the .feed container
          */
@@ -90,7 +89,8 @@ $(function () {
             loadFeed(0, done);
         });
         it('there is at least single entry element', function () {
-            expect($('.feed .entry').length).toBeGreaterThanOrEqual(1);
+          //  expect($('.feed').children.length).toBeGreaterThanOrEqual(1);
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
 
     });
@@ -98,27 +98,27 @@ $(function () {
 
 
 
-    /* This test suite is about adding new feed and what happened then */
 
+    /* This test suite is about adding new feed and what happened then */
     describe('New Feed Selection', function () {
 
 
-        /* This test ensures when a new feed is loaded
-         * the content actually changes.
-         */
+              /* This test ensures when a new feed is loaded
+               * the content actually changes.
+               */
         let oldFeed;
         beforeEach(function (done) {
 
             loadFeed(0, function () {
-                let oldFeed = $('.feed').html();
-                loadFeed(1, done);
+                oldFeed = $('.feed').html();
+                loadFeed(1,done)
 
             })
         })
         it('A new feed is loaded  ', function () {
-            expect($('.feed')).not.toBe(oldFeed);
+            expect($('.feed').html()).not.toBe(oldFeed);
         })
 
     })
 
-}());
+  }());
