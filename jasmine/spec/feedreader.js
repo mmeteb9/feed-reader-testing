@@ -43,7 +43,7 @@ $(function () {
         it('Each feed has a name defined and not Defined', function () {
             for (let x of allFeeds) {
                 expect(x.name).toBeDefined();
-                expect(x.url.length).not.toBe(0);
+                expect(x.name.length).not.toBe(0);
             }
         })
     });
